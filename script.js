@@ -1,8 +1,10 @@
 //your JS code here. If required.
-Promise promise = new Promise(()=>{
-	setTimeout(resolve(),1000);
-});
-promise.then(()=>{
-	const ele = document.getElementById('output');
-	ele.innerText = 'Hello, world!';
+function sayHello() {
+	return new Promise((resolve,reject)=>{
+		resolve('Hello world!');
+	});
+}
+sayHello().then((result)=>{
+	const outputElement = document.getElementById("output");
+	outputElement.innerText = result;
 });
